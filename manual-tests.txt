@@ -61,4 +61,10 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should display "Developer" for the user name.
 
+# Module 4
+## Test Steps
+1. Build and run CiCo.
+2. Attempt to enter "abcd" or any non-numeric
 
+## Expected results
+* Audio will beep everytime user tries to type non-numeric char

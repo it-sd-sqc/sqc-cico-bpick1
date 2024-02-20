@@ -39,28 +39,38 @@ public class Main {
 
     @Override
     public void insertString(FilterBypass fb, int offset, String stringToAdd, AttributeSet attr)
-        throws BadLocationException
-    {
-      if (fb.getDocument() != null) {
+        throws BadLocationException {
+      // Check if the resulting document length after insertion is within the allowed limit
+      if (fb.getDocument().getLength() + stringToAdd.length() <= MAX_LENGTH && isNumeric(stringToAdd)) {
+        // Call the super version of the method to insert the string
         super.insertString(fb, offset, stringToAdd, attr);
-      }
-      else {
+      } else {
+        // If the input exceeds the maximum length or contains non-numeric characters, emit a beep sound
         Toolkit.getDefaultToolkit().beep();
       }
     }
 
     @Override
     public void replace(FilterBypass fb, int offset, int lengthToDelete, String stringToAdd, AttributeSet attr)
-        throws BadLocationException
-    {
-      if (fb.getDocument() != null) {
+        throws BadLocationException {
+      // Check if the resulting document length after replacement is within the allowed limit
+      int newLength = fb.getDocument().getLength() - lengthToDelete + stringToAdd.length();
+      if (newLength <= MAX_LENGTH && isNumeric(stringToAdd)) {
+        // Call the super version of the method to replace the text
         super.replace(fb, offset, lengthToDelete, stringToAdd, attr);
-      }
-      else {
+      } else {
+        // If the input exceeds the maximum length or contains non-numeric characters, emit a beep sound
         Toolkit.getDefaultToolkit().beep();
       }
     }
+
+    // Helper method to check if a string contains only numeric characters
+    private boolean isNumeric(String str) {
+      return str.matches("\\d+");
+    }
   }
+
+
 
   // Lookup the card information after button press ///////////////////////////
   public static class Update implements ActionListener {
