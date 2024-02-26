@@ -68,3 +68,13 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 
 ## Expected results
 * Audio will beep everytime user tries to type non-numeric char
+
+# Module 5
+## Test Steps
+1. Build and run CiCo
+2. Enter "00000000" and click update
+3. Once in the status panel, click the ok button
+
+## Expected results
+* User will be pushed back to main panel where other users
+  can log/scan in without having to wait the timeout

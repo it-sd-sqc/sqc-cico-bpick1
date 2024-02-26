@@ -280,6 +280,10 @@ public class Main {
 
     // Status panel ///////////////////////////////////////////////////////////
     JPanel panelStatus = new JPanel();
+//    JButton confirmStatus = new JButton("Confirm");
+//    confirmStatus.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+//    confirmStatus.addActionListener(panelMain.);
+//    confirmStatus.setForeground(Color.green);
     panelStatus.setLayout(new BoxLayout(panelStatus, BoxLayout.PAGE_AXIS));
     panelStatus.setMinimumSize(new Dimension(320, 240));
     panelStatus.setPreferredSize(new Dimension(640, 480));
@@ -322,6 +326,7 @@ public class Main {
     buttonAcknowledge.setForeground(Color.red);
     panelError.add(buttonAcknowledge);
     panelError.add(Box.createVerticalGlue());
+    panelStatus.add(buttonAcknowledge);
 
     // Add the cards //////////////////////////////////////////////////////////
     deck.add(panelMain, CARD_MAIN);
