@@ -78,3 +78,14 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * User will be pushed back to main panel where other users
   can log/scan in without having to wait the timeout
+
+# Module 6 
+## Test Steps 
+1. Build and run CiCo
+2. Enter "00000000" and click update
+
+## Expected Results
+* User should be greeted with a monochromatic color scheme using natural colors
+  the page after being validated should also apply another monochromatic theme along the 
+  same set of colors
+
